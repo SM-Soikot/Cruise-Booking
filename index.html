@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cruise Booking</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- javascript -->
+    <script src="script.js"></script>
+
+</head>
+
+<body>
+    <!--Header and Menu Section-->
+    <header class="container">
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a class="active" href="#">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--Booking Section-->
+    <main class="main-content container">
+
+        <div class="booking-content">
+            <h1>Cruise Queen</h1>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book./p>
+        </div>
+
+
+        <div id="booked" class="booking-form">
+            <h3>Book Ocean Time</h3>
+            <div class="input-group">
+                <label for="">Sailed form</label>
+                <input class="inp-style" type="text" name="" placeholder="Dhaka, Bangladesh">
+            </div>
+            <div class="input-group">
+                <label for="">Sailed To</label>
+                <input class="inp-style" type="text" name="" placeholder="New York, United States">
+            </div>
+            <div class="inputs">
+                <div class="input-group">
+                    <label" for="">Departure</label>
+                        <input class="inp-style" type="date" name="">
+                </div>
+                <div class="input-group">
+                    <label for="">Return</label>
+                    <input class="inp-style" type="date" name="">
+                </div>
+            </div>
+            <div class="input-group f-class">
+                <div>
+                    <label for="">Business Class ($150)</label>
+                    <input id="business-count" class="inp-style inp-width " type="number" value="0" >
+                </div>
+                <div class=>
+                    <button onclick="handleTicket('business', true)"  class="plus-minus-btn">+</button>
+                    <button onclick=" handleTicket('business', false)" class="plus-minus-btn">-</button>
+                </div>
+            </div>
+
+            <div class="input-group f-class">
+                <div>
+                    <label for="">economy Class($100)</label>
+                    <input id="economy-count" class="inp-style inp-width" type="number" value="0" >
+                </div>
+                <div>
+                    <button onclick=" handleTicket('economy', true)" class="plus-minus-btn">+</button>
+                    <button onclick=" handleTicket('economy', false)" class="plus-minus-btn">-</button>
+                </div>
+            </div>
+            <div class="calculations">
+                <div class="amount">
+                    <div class="left">
+                        <p>Business Class</p>
+                    </div>
+                    <div class="right">
+                        <p id="business-total">$00</p>
+                    </div>
+                </div>
+                <div class="amount">
+                    <div class="left">
+                        <p>economy Class</p>
+                    </div>
+                    <div class="right">
+                        <p id="economy-total">$00</p>
+                    </div>
+                </div>
+                <div class="amount">
+                    <div class="left">
+                        <p>Subtotal</p>
+                    </div>
+                    <div class="right">
+                        <p id="subtotal">$00</p>
+                    </div>
+                </div>
+
+                <div class="amount">
+                    <div class="left">
+                        <p>Charge 10% VAT</p>
+                    </div>
+                    <div class="right">
+                        <p id="vat">$00</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="amount">
+                    <div class="left">
+                        <h4>Total</h4>
+                    </div>
+                    <div class="right">
+                        <p id="total">$00</p>
+                    </div>
+                </div>
+            </div>
+            <button id="booknow" class="btn-style">Book Now</button>
+        </div>
+
+        <!-- payment section  -->
+
+        <div id="payment" class="booking-form">
+            <h1>Payment</h1>
+            <h3>Name</h3>
+            <input type="text" class="inp-style inp-width">
+            <h3>Card Number</h3>
+            <input type="number" class="inp-style inp-width">
+            <h3>Expiration (mm/yy)</h3>
+            <input type="number" class="inp-style inp-width">
+            <h3>Security Code</h3>
+            <input type="number" class="inp-style inp-width">
+            <button class="btn-style">Pay Now</button>
+            <img src="images/pay.png" alt="">
+
+        </div>
+    </main>
+
+   <script>
+       const booking = document.getElementById('booknow');
+booking.addEventListener("click", function(){
+    const bookingArea = document.getElementById('booked');
+    bookingArea.style.display = "none";
+
+    const paymentArea = document.getElementById('payment');
+    paymentArea.style.display = "block";
+})
+   </script>
+</body>
+
+         <!-- Thank You -->
+</html>
